@@ -5,7 +5,7 @@ import csv, hashlib, time
 # 配置
 ip = '127.0.0.1'  # 服务器RCON的IP
 port = 25575      # 服务器RCON的端口
-usemd5 = True        # 服务器RCON密码是否为MD5加密过的
+usemd5 = True     # 服务器RCON密码是否为MD5加密过的
 
 # 一些函数
 # RCON远程命令
