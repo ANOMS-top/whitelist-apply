@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ANOMS服务器白名单审核</title>
+		<link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/100402539?s=200&v=4">
+	</head>
+	<body>
+		<div class="logo-container" id="logo">
+			<img src="https://avatars.githubusercontent.com/u/100402539?s=200&v=4" alt="" />
+			<span id="text">
+				<p class="p1">ANOMS服务器白名单审核</p>
+				<hr>
+				<p class="p2">A Not Ordinary Minecraft Server</p>
+			</span>
+		</div>
+		<form action="./submit" method="POST" class="form" id="form">
+			<input type="text" name="qq" pattern="^[1-9][0-9]{4,9}$" placeholder="QQ号" onfocus="inputFocusIn(0)" onfocusout="inputFocusOut(0)" onmouseenter="inputMouseIn(0)" onmouseleave="inputMouseOut(0)" required="required">
+			<input type="text" name="id" placeholder="玩家ID" onfocus="inputFocusIn(1)" onfocusout="inputFocusOut(1)" onmouseenter="inputMouseIn(1)" onmouseleave="inputMouseOut(1)" required="required">
+			<button type="submit">提交申请</button>
+		</form>
+	</body>
+	<style>
+		*{
+			overflow-y: hidden;
+			font-family: MiSans,Microsoft Yahei,sans-serif;
+		}
+
+		body{
+			background-color: #f8f9fa;
+		}
+		
+		.logo-container{
+			position: absolute;
+			height: 160px;
+			padding: 32px;
+			width: 522px;
+			left: calc((100vw - 128px)/2);
+			top: 250px;
+			opacity: 0;
+			-webkit-transition-duration: .7s;
+			transition-duration: .7s;
+		}
+		
+		.logo-container img{
+			width: 128px;
+			height: 128px;
+			display: inline-block;
+			text-align: center;
+			border-radius: 10px;
+			box-shadow: 0 0 24px 0 rgba(0,0,0,.3);
+		}
+		
+		.logo-container span{
+			display: inline-block;
+			margin-left: 15px;
+			margin-bottom: 20px;
+			opacity: 0;
+		}
+		
+		.logo-container p{
+			margin: 0;
+		}
+		
+		.p1{
+			font-size: 32px;
+			color: #333333;
+		}
+		
+		.p2{
+			font-size: 23px;
+			color: #777777;
+		}
+		
+		.form button{
+			margin: 4px 2px;
+			width: 250px;
+			height: 75px;
+			border: none;
+			border-radius: 10px;
+			background: linear-gradient(90deg,#56ccf2,#2f80ed);
+			box-shadow: 0 0 24px 0 rgba(0,0,0,.3);
+			color: #fff;
+			text-align: center;
+			font-size: 24px;
+			font-family: YouYuan,Yuanti SC,Microsoft Yahei,sans-serif;
+			cursor: pointer;
+			-webkit-transition-duration: .3s;
+			transition-duration: .3s;
+			position: relative;
+			left: 155px;
+			top: 30px;
+		}
+		
+		.form button:hover{
+			transform: scale(1.05);
+		}
+		
+		.form{
+			position: absolute;
+			left: calc((100vw - 624px)/2);
+			top: calc((100vh - 274px)/2 + 100px);
+			padding: 32px;
+			width: 576px;
+			height: 300px;
+			-webkit-transition-duration: .5s;
+			transition-duration: .5s;
+			opacity: 0;
+		}
+
+		.form input{
+			width: 560px;
+			height: 40px;
+			border-radius: 10px;
+			margin: 15px 0px;
+			box-shadow: none;
+			border: 2px solid #777777;
+			font-size: 16px;
+			padding-left: 10px;
+			outline: none;
+			-webkit-transition-duration: .2s;
+			transition-duration: .2s;
+		}
+	</style>
+	<noscript>
+		<style>
+			.logo-container{
+				opacity: 100;
+				top: 100px;
+				left: calc((100vw - 586px)/2);
+				-webkit-transition-duration: .5s;
+				transition-duration: .5s;
+			}
+
+			.logo-container span{
+				opacity: 100;
+			}
+
+			.form{
+				opacity: 100;
+			}
+		</style>
+	</noscript>
+	<script>
+		setTimeout('document.getElementById("logo").style.opacity = "100";document.getElementById("logo").style.transitionDuration = ".5s";', 500);
+		setTimeout('document.getElementById("text").style.opacity = "100";document.getElementById("logo").style.left = "calc((100vw - 586px)/2)"', 800);
+		setTimeout('document.getElementById("logo").style.top = "100px"', 1300);
+		setTimeout('document.getElementById("form").style.opacity = "100"', 1500);
+
+		var inputs = document.getElementsByTagName("input");
+		var noFocus = [true, true]
+
+		function inputFocusIn(index){
+            noFocus[index] = false;
+            inputs[index].style.borderColor = "#2f80ed";
+        }
+        function inputFocusOut(index){
+            noFocus[index] = true;
+			inputs[index].style = "";
+        }
+        function inputMouseIn(index){
+            if (noFocus[index]) {
+                inputs[index].style.borderColor = "#555555";
+            }
+        }
+        function inputMouseOut(index){
+            if (noFocus[index]) {
+                inputs[index].style = "";
+            }
+        }
+
+		{{JS|safe}}
+	</script>
+</html>

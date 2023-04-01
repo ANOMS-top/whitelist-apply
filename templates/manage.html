@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ANOMS服务器白名单审核</title>
+		<link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/100402539?s=200&v=4">
+	</head>
+	<body>
+		<div class="logo-container" id="logo">
+			<img src="https://avatars.githubusercontent.com/u/100402539?s=200&v=4" alt=""/>
+			<span id="text">
+				<p class="p1">ANOMS服务器白名单审核</p>
+				<hr>
+				<p class="p2">A Not Ordinary Minecraft Server</p>
+			</span>
+		</div>
+		<div class="table">
+			<h2>白名单待审核列表</h2>
+			<table>
+				<thead>
+					<tr>
+						<th style="width: 4%">#</th>
+						<th style="width: 25%">玩家ID</th>
+						<th style="width: 22%">QQ号</th>
+						<th style="width: 30%">申请时间</th>
+						<th style="width: 25%">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{table|safe}}
+				</tbody>
+			</table>
+		</div>
+	</body>
+	<style>
+		*{
+			overflow-y: hidden;
+			font-family: MiSans,Microsoft Yahei,sans-serif;
+			-webkit-transition-duration: .5s;
+			transition-duration: .5s;
+		}
+
+		body{
+			background-color: #f8f9fa;
+		}
+		
+		.logo-container{
+			position: absolute;
+			height: 160px;
+			padding: 32px;
+			width: 522px;
+			top: 100px;
+			left: calc((100vw - 586px)/2);
+		}
+		
+		.logo-container img{
+			width: 128px;
+			height: 128px;
+			display: inline-block;
+			text-align: center;
+			border-radius: 10px;
+			box-shadow: 0 0 24px 0 rgba(0,0,0,.3);
+		}
+		
+		.logo-container span{
+			display: inline-block;
+			margin-left: 15px;
+			margin-bottom: 20px;
+		}
+		
+		.logo-container p{
+			margin: 0;
+		}
+		
+		.p1{
+			font-size: 32px;
+			color: #333333;
+		}
+		
+		.p2{
+			font-size: 23px;
+			color: #777777;
+		}
+
+		.table{
+			width: 1000px;
+			position: absolute;
+			left: calc((100vw - 1000px)/2);
+			top: 300px;
+		}
+
+		.table h2{
+			position: relative;
+			width: 192px;
+			left: 404px;
+		}
+
+		.table table{
+			width: 1000px;
+		}
+
+		.table th{
+			text-align: left;
+		}
+
+		.table-action form{
+			display: inline-block;
+			width: 65px;
+			height: 32.5px;
+			margin: 5px;
+		}
+
+		.table-action button{
+			color: white;
+			border: none; 
+			border-radius: 10px;
+			width: 65px;
+			height: 32.5px;
+		}
+	</style>
+</html>
