@@ -18,7 +18,8 @@ def serverCommand(pwd, command):
     else:
         print("[RCON] Password: " + pwd)
     mcr = MCRcon(ip, pwd, port)
-    if mcr.connect() == "Login failed":
+    outp = mcr.connect()
+    if outp == "Login failed" or outp == "Connection refused":
         print("[RCON] Login failed!")
     print("[RCON] Login success!")
     cmd = mcr.command(command)
@@ -81,7 +82,8 @@ def rconConnect(pwd):
     else:
         print("[RCON] Password: " + pwd)
     mcr = MCRcon(ip, pwd, port)
-    if mcr.connect() == "Login failed":
+    outp = mcr.connect()
+    if outp == "Login failed" or outp == "Connection refused":
         print("[RCON] Login failed!")
         return False
     print("[RCON] Login success!")

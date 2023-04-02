@@ -34,9 +34,12 @@ class MCRcon(object):
                 ctx.verify_mode = ssl.CERT_NONE
 
             self.socket = ctx.wrap_socket(self.socket, server_hostname=self.host)
-
-        self.socket.connect((self.host, self.port))
-        return self._send(3, self.password)
+        try:
+            self.socket.connect((self.host, self.port))
+            return self._send(3, self.password)
+        except:
+            return "Connection refused"
+        
 
 
 
