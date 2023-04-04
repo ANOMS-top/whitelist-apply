@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>ANOMS服务器白名单审核</title>
+		<title>管理页面｜ANOMS服务器白名单审核</title>
 		<link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/100402539?s=200&v=4">
 	</head>
 	<body>
@@ -15,14 +15,17 @@
 			</span>
 		</div>
 		<div class="table">
-			<h2>白名单待审核列表</h2>
+			<div class="table-header">
+				<h2>白名单待审核列表</h2>
+			</div>
 			<table>
 				<thead>
 					<tr>
 						<th style="width: 4%">#</th>
-						<th style="width: 25%">玩家ID</th>
-						<th style="width: 22%">QQ号</th>
-						<th style="width: 30%">申请时间</th>
+						<th style="width: 21%">玩家ID</th>
+						<th style="width: 20%">QQ号</th>
+						<th style="width: 20%">申请时间</th>
+						<th style="width: 10%">状态</th>
 						<th style="width: 25%">操作</th>
 					</tr>
 				</thead>
@@ -89,7 +92,7 @@
 			top: 300px;
 		}
 
-		.table h2{
+		.table-header h2{
 			position: relative;
 			width: 192px;
 			left: 404px;

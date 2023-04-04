@@ -14,7 +14,8 @@
 				<p class="p2">A Not Ordinary Minecraft Server</p>
 			</span>
 		</div>
-		<p class="notify">您已成功申请白名单，请等待管理员进行确认!</p>
+		<h1 class="title">申请成功!</h1>
+		<p class="notify">您已成功申请白名单，请等待管理员进行确认!<br>可前往<a href="./status">状态查询</a>页面查询自己的审核状态!</p>
 	</body>
 	<style>
 		*{
@@ -22,6 +23,17 @@
 			font-family: MiSans,Microsoft Yahei,sans-serif;
 			-webkit-transition-duration: .5s;
 			transition-duration: .5s;
+		}
+
+		a{
+			text-decoration: none;
+			color: #5697f2;
+			-webkit-transition-duration: .2s;
+			transition-duration: .2s;
+		}
+
+		a:hover{
+			color: #2f80ed;
 		}
 
 		body{
@@ -72,6 +84,17 @@
 			left: calc((100vw - 730px)/2);
 			top: calc((100vh - 47.5px)/2);
 			font-size: 36px;
+			text-align: center;
+		}
+
+		.title{
+			position: absolute;;
+			width: 183px;
+			top: 300px;
+			left: calc((100vw - 183px)/2);
+			-webkit-transition-duration: .5s;
+			transition-duration: .5s;
+			font-size: 42px;
 		}
 	</style>
 </html>

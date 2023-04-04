@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>登录｜ANOMS服务器白名单审核</title>
+		<title>查询状态｜ANOMS服务器白名单审核</title>
 		<link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/100402539?s=200&v=4">
 	</head>
 	<body>
@@ -14,10 +14,10 @@
 				<p class="p2">A Not Ordinary Minecraft Server</p>
 			</span>
 		</div>
-		<h1 class="title">管理员登录</h1>
-		<form action="./manage" method="POST" class="form">
-			<input type="password" name="pwd" placeholder="服务器RCON密码" onfocus="inputFocusIn(0)" onfocusout="inputFocusOut(0)" onmouseenter="inputMouseIn(0)" onmouseleave="inputMouseOut(0)" required="required">
-			<button type="submit">登录</button>
+		<h1 class="title">玩家审核状态查询</h1>
+		<form action="./status" method="GET" class="form">
+			<input type="text" name="player" placeholder="请输入玩家ID" onfocus="inputFocusIn(0)" onfocusout="inputFocusOut(0)" onmouseenter="inputMouseIn(0)" onmouseleave="inputMouseOut(0)" required="required">
+			<button type="submit">查询</button>
 		</form>
 	</body>
 	<style>
@@ -122,9 +122,9 @@
 
 		.title{
 			position: absolute;;
-			width: 160px;
+			width: 256px;
 			top: 300px;
-			left: calc((100vw - 160px)/2);
+			left: calc((100vw - 256px)/2);
 			-webkit-transition-duration: .5s;
 			transition-duration: .5s;
 		}

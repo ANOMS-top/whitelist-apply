@@ -1,13 +1,14 @@
-import socket, ssl ,select, struct, time
+import socket, ssl, select, struct, time
+
 
 class MCRconException(Exception):
     pass
 
 
-class MCRcon(object):	
+class MCRcon(object):
     socket = None
 
-	#重写init方法
+    # 重写init方法
     def __init__(self, host, password, port, tlsmode=0):
         self.host = host
         self.password = password
@@ -16,7 +17,7 @@ class MCRcon(object):
 
     def __exit__(self, type, value, tb):
         self.disconnect()
-		
+
     def __enter__(self):
         self.connect()
         return self
@@ -39,24 +40,21 @@ class MCRcon(object):
             return self._send(3, self.password)
         except:
             return "Connection refused"
-        
-
-
 
     def _read(self, length):
         data = b""
         while len(data) < length:
             data += self.socket.recv(length - len(data))
         return data
-		
+
     def disconnect(self):
         if self.socket is not None:
             self.socket.close()
             self.socket = None
-			
+
     def _send(self, out_type, out_data):
         if self.socket is None:
-            return("Not connected")
+            return ("Not connected")
 
         # 发送请求包
         out_payload = struct.pack('<ii', 0, out_type) + out_data.encode('utf8') + b'\x00\x00'
@@ -74,18 +72,16 @@ class MCRcon(object):
 
             # 异常处理
             if in_padding != b'\x00\x00':
-                return("Incorrect padding")
+                return ("Incorrect padding")
             if in_id == -1:
-                return("Login failed")
+                return ("Login failed")
 
-            
             in_data += in_data_partial.decode('utf8')
-
 
             if len(select.select([self.socket], [], [], 0)[0]) == 0:
                 return in_data
 
     def command(self, command):
         result = self._send(2, command)
-        time.sleep(0.003) # MC-72390 （非线程安全的解决办法）
+        time.sleep(0.003)  # MC-72390 （非线程安全的解决办法）
         return result
