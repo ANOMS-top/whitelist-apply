@@ -35,10 +35,14 @@ class MCRcon(object):
                 ctx.verify_mode = ssl.CERT_NONE
 
             self.socket = ctx.wrap_socket(self.socket, server_hostname=self.host)
+        
+        print("[RCON] Connecting to " + self.host + ":" + str(self.port) + "...")
+        print("[RCON] Using password: " + self.password)
         try:
             self.socket.connect((self.host, self.port))
             return self._send(3, self.password)
         except:
+            print("[RCON] Connection refused!")
             return "Connection refused"
 
     def _read(self, length):
@@ -54,6 +58,7 @@ class MCRcon(object):
 
     def _send(self, out_type, out_data):
         if self.socket is None:
+            print("[RCON] Not connected yet!")
             return ("Not connected")
 
         # 发送请求包
@@ -72,13 +77,16 @@ class MCRcon(object):
 
             # 异常处理
             if in_padding != b'\x00\x00':
+                print("[RCON] Incorrect padding!")
                 return ("Incorrect padding")
             if in_id == -1:
+                print("[RCON] Login failed!")
                 return ("Login failed")
 
             in_data += in_data_partial.decode('utf8')
 
             if len(select.select([self.socket], [], [], 0)[0]) == 0:
+                print("[RCON] Succesfully loged in!")
                 return in_data
 
     def command(self, command):

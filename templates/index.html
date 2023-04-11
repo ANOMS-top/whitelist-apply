@@ -14,7 +14,7 @@
 				<p class="p2">A Not Ordinary Minecraft Server</p>
 			</span>
 		</div>
-		<form action="./submit" method="POST" class="form" id="form">
+		<form action="/submit" method="POST" class="form" id="form">
 			<input type="text" name="qq" pattern="^[1-9][0-9]{4,9}$" placeholder="QQ号" onfocus="inputFocusIn(0)" onfocusout="inputFocusOut(0)" onmouseenter="inputMouseIn(0)" onmouseleave="inputMouseOut(0)" required="required">
 			<input type="text" name="id" placeholder="玩家ID" onfocus="inputFocusIn(1)" onfocusout="inputFocusOut(1)" onmouseenter="inputMouseIn(1)" onmouseleave="inputMouseOut(1)" required="required">
 			<button type="submit">提交申请</button>
@@ -127,7 +127,7 @@
 			.logo-container{
 				opacity: 100;
 				top: 100px;
-				left: calc((100vw - 586px)/2);
+				left: calc((100vw - 522px)/2);
 				-webkit-transition-duration: .5s;
 				transition-duration: .5s;
 			}
@@ -143,7 +143,7 @@
 	</noscript>
 	<script>
 		setTimeout('document.getElementById("logo").style.opacity = "100";document.getElementById("logo").style.transitionDuration = ".5s";', 500);
-		setTimeout('document.getElementById("text").style.opacity = "100";document.getElementById("logo").style.left = "calc((100vw - 586px)/2)"', 800);
+		setTimeout('document.getElementById("text").style.opacity = "100";document.getElementById("logo").style.left = "calc((100vw - 522px)/2)"', 800);
 		setTimeout('document.getElementById("logo").style.top = "100px"', 1300);
 		setTimeout('document.getElementById("form").style.opacity = "100"', 1500);
 

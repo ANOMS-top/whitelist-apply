@@ -15,8 +15,9 @@
 			</span>
 		</div>
 		<h1 class="title">管理员登录</h1>
-		<form action="./manage" method="POST" class="form">
+		<form action="/login/submit" method="POST" class="form">
 			<input type="password" name="pwd" placeholder="服务器RCON密码" onfocus="inputFocusIn(0)" onfocusout="inputFocusOut(0)" onmouseenter="inputMouseIn(0)" onmouseleave="inputMouseOut(0)" required="required">
+			<input type="checkbox" name="useCookie">7天内免登录<br>
 			<button type="submit">登录</button>
 		</form>
 	</body>
@@ -36,7 +37,7 @@
 			padding: 32px;
 			width: 522px;
 			top: 100px;
-			left: calc((100vw - 586px)/2);
+			left: calc((100vw - 522px)/2);
 			-webkit-transition-duration: .5s;
 			transition-duration: .5s;
 		}
@@ -105,7 +106,7 @@
 			transition-duration: .5s;
 		}
 
-		.form input{
+		.form input[type=password]{
 			width: 560px;
 			height: 40px;
 			border-radius: 10px;
@@ -118,6 +119,20 @@
 			outline: none;
 			-webkit-transition-duration: .2s;
 			transition-duration: .2s;
+		}
+
+		.form input[type=checkbox]{
+			width: 20px;
+			height: 20px;
+			border-radius: 10px;
+			box-shadow: none;
+			border: 2px solid #777777;
+			font-size: 16px;
+			padding-left: 10px;
+			padding-right: 10px;
+			position: relative;
+			top: 3px;
+			margin-right: 5px;
 		}
 
 		.title{
